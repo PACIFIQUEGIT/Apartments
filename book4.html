@@ -231,8 +231,11 @@
                 <div class="row">
                     <div class="col-3 my-3">
                         <p>Duration (Pick dates from & to)</p>
-                        <label style="color: rgb(130, 0, 0);" for="date">Please select</label>
-                        <input type="date" id="date" name="date">
+                        <label onclick="dateinputs()" style="color: rgb(130, 0, 0);" for="date">Please select</label> <br>
+                        <div style="display: none;" id="dateinputs"><input class="border-0" type="date" id="date" name="date">
+                        <label class="text-muted" for="exitDate"><i class='bx bx-right-arrow-alt'></i></label>
+                        <input class="border-0" type="date" id="exitDate" name="exitDate">
+                        </div>
                     </div>
                     <div style="border-left: 1px solid;" class="col my-3">           
                         <p>Recommended Guests</p>                          
@@ -288,40 +291,40 @@
                 </div>
                 
                 <div class="columnl">
-                    <img class="thumbnail" src="4b1.png" alt="">
+                    <img class="thumbnail" src="images/4b1.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b2.png" alt="">
+                    <img class="thumbnail" src="images/4b2.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b3.png" alt="">
+                    <img class="thumbnail" src="images/4b3.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b4.png" alt="">
+                    <img class="thumbnail" src="images/4b4.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b5.png" alt="">
+                    <img class="thumbnail" src="images/4b5.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b6.png" alt="">
+                    <img class="thumbnail" src="images/4b6.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b7.png" alt="">
+                    <img class="thumbnail" src="images/4b7.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b8.png" alt="">
+                    <img class="thumbnail" src="images/4b8.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b9.png" alt="">
+                    <img class="thumbnail" src="images/4b9.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b10.png" alt="">
+                    <img class="thumbnail" src="images/4b10.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b11.png" alt="">
+                    <img class="thumbnail" src="images/4b11.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="4b12.png" alt="">
+                    <img class="thumbnail" src="images/4b12.png" alt="">
                 </div>
             </div>
         </div>
@@ -439,11 +442,11 @@
     <script>
         let activeIndex = 0;
         blue = "1px solid blue";
-        const images = ["4b1.png", "4b2.png", "4b3.png", "4b4.png", "4b5.png", "4b6.png", "4b7.png", "4b8.png", "4b9.png", "4b10.png", "4b11.png", "4b12.png"];
+        const images = ["images/4b1.png", "images/4b2.png", "images/4b3.png", "images/4b4.png", "images/4b5.png", "images/4b6.png", "images/4b7.png", "images/4b8.png", "images/4b9.png", "images/4b10.png", "images/4b11.png", "images/4b12.png"];
     
         function lightbox1() {
             document.getElementById("lightbox1").style.display = "block";
-            document.getElementById("slide").src = images[activeIndex];
+            document.getElementById("slide").src = array[activeIndex];
             document.body.style.overflow = "hidden";
             document.addEventListener("click", closel);
             updateThumbnailBorder();
@@ -454,7 +457,7 @@
             const fs = document.getElementById("fs");
             if (fs.className = "mcf" ) {
                 fs.className = "modal-content";
-                slidefs.style.width = "755px";
+                slidefs.style.width = "752px";
             }
             document.getElementById("slide").src = "";
             document.body.style.overflow = "auto";
@@ -470,9 +473,9 @@
         }
     
         function nextl() {
-            if (activeIndex < images.length - 1) {
+            if (activeIndex < array.length - 1) {
                 activeIndex++;
-                document.getElementById("slide").src = images[activeIndex];
+                document.getElementById("slide").src = array[activeIndex];
                 updateThumbnailBorder();
             }
         }
@@ -480,7 +483,7 @@
         function prevl() {
             if (activeIndex > 0) {
                 activeIndex--;
-                document.getElementById("slide").src = images[activeIndex];
+                document.getElementById("slide").src = array[activeIndex];
                 updateThumbnailBorder();
             }
         }
@@ -512,15 +515,16 @@
         const slidefs = document.getElementById("slide");
         if (fs.className === "modal-content") {
             fs.className = "mcf";
-            slidefs.style.width = "1021px";
+            slidefs.style.width = "1004px";
             document.removeEventListener("click", closel);
         } else {
             fs.className = "modal-content";
-            slidefs.style.width = "755px";
+            slidefs.style.width = "752px";
             document.addEventListener("click", closel);
         }
         }
     </script>
+    <script src="script.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
 </html>

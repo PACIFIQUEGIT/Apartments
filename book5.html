@@ -229,8 +229,11 @@
                 <div class="row">
                     <div class="col-3 my-3">
                         <p>Duration (Pick dates from & to)</p>
-                        <label style="color: rgb(130, 0, 0);" for="date">Please select</label>
-                        <input type="date" id="date" name="date">
+                        <label onclick="dateinputs()" style="color: rgb(130, 0, 0);" for="date">Please select</label> <br>
+                        <div style="display: none;" id="dateinputs"><input class="border-0" type="date" id="date" name="date">
+                        <label class="text-muted" for="exitDate"><i class='bx bx-right-arrow-alt'></i></label>
+                        <input class="border-0" type="date" id="exitDate" name="exitDate">
+                        </div>
                     </div>
                     <div style="border-left: 1px solid;" class="col my-3">           
                         <p>Recommended Guests</p>                          
@@ -286,37 +289,37 @@
                 </div>
                 
                 <div class="columnl">
-                    <img class="thumbnail" src="5b1.png" alt="">
+                    <img class="thumbnail" src="images/5b1.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b2.png" alt="">
+                    <img class="thumbnail" src="images/5b2.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b3.png" alt="">
+                    <img class="thumbnail" src="images/5b3.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b4.png" alt="">
+                    <img class="thumbnail" src="images/5b4.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b5.png" alt="">
+                    <img class="thumbnail" src="images/5b5.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b6.png" alt="">
+                    <img class="thumbnail" src="images/5b6.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b7.png" alt="">
+                    <img class="thumbnail" src="images/5b7.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b8.png" alt="">
+                    <img class="thumbnail" src="images/5b8.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b9.png" alt="">
+                    <img class="thumbnail" src="images/5b9.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b10.png" alt="">
+                    <img class="thumbnail" src="images/5b10.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="5b11.png" alt="">
+                    <img class="thumbnail" src="images/5b11.png" alt="">
                 </div>
             </div>
         </div>
@@ -434,11 +437,11 @@
     <script>
         let activeIndex = 0;
         blue = "1px solid blue";
-        const images = ["5b1.png", "5b2.png", "5b3.png", "5b4.png", "5b5.png", "5b6.png", "5b7.png", "5b8.png", "5b9.png", "5b10.png", "5b11.png"];
+        const array = ["images/5b1.png", "images/5b2.png", "images/5b3.png", "images/5b4.png", "images/5b5.png", "images/5b6.png", "images/5b7.png", "images/5b8.png", "images/5b9.png", "images/5b10.png", "images/5b11.png"];
     
         function lightbox1() {
             document.getElementById("lightbox1").style.display = "block";
-            document.getElementById("slide").src = images[activeIndex];
+            document.getElementById("slide").src = array[activeIndex];
             document.body.style.overflow = "hidden";
             document.addEventListener("click", closel);
             updateThumbnailBorder();
@@ -449,7 +452,7 @@
             const fs = document.getElementById("fs");
             if (fs.className = "mcf" ) {
                 fs.className = "modal-content";
-                slidefs.style.width = "755px";
+                slidefs.style.width = "752px";
             }
             document.getElementById("slide").src = "";
             document.body.style.overflow = "auto";
@@ -465,9 +468,9 @@
         }
     
         function nextl() {
-            if (activeIndex < images.length - 1) {
+            if (activeIndex < array.length - 1) {
                 activeIndex++;
-                document.getElementById("slide").src = images[activeIndex];
+                document.getElementById("slide").src = array[activeIndex];
                 updateThumbnailBorder();
             }
         }
@@ -475,7 +478,7 @@
         function prevl() {
             if (activeIndex > 0) {
                 activeIndex--;
-                document.getElementById("slide").src = images[activeIndex];
+                document.getElementById("slide").src = array[activeIndex];
                 updateThumbnailBorder();
             }
         }
@@ -516,6 +519,7 @@
         }
         }
     </script>
+    <script src="script.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
 </html>

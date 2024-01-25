@@ -108,5 +108,13 @@ function spanopen(){
 function focusp(){
     document.getElementById("passcode").focus();
 }
-
-
+function dateinputs () {
+    document.getElementById("dateinputs").style.display="flex";
+}
+function dateinputsfade () {
+    const date = document.getElementById("date").value;
+    const exitDate = document.getElementById("exitDate").value;
+    if (date ||exitDate === "") {
+        document.getElementById("dateinputs").style.display="none";
+    } 
+}

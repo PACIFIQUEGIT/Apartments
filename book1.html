@@ -230,12 +230,13 @@
             <p class="h3 px-0">Check for availability</p>
             <div style="border-bottom: 1px solid rgb(130, 0, 0);border-radius: 0%;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);" class="card my-1 my-4">
                 <div class="row">
-                    <div class="col-5 my-3">
+                    <div id="fadedi" class="col-5 my-3">
                         <p>Duration (Pick dates from & to)</p>
-                        <label style="color: rgb(130, 0, 0);" for="date">Please select</label> <br>
-                    <div id=""><input type="date" id="date" name="date">
+                        <label onclick="dateinputs()" style="color: rgb(130, 0, 0);" for="date">Please select</label> <br>
+                        <div style="display: none;" id="dateinputs"><input class="border-0" type="date" id="date" name="date">
                         <label class="text-muted" for="exitDate"><i class='bx bx-right-arrow-alt'></i></label>
-                        <input class="border-0" type="date" id="exitDate" name="exitDate"></div>
+                        <input class="border-0" type="date" id="exitDate" name="exitDate">
+                        </div>
                     </div>
                     <div style="border-left: 1px solid;" class="col my-3">           
                         <p>Recommended Guests</p>                          
@@ -291,43 +292,43 @@
                 </div>
                 
                 <div class="columnl">
-                    <img class="thumbnail" src="1b1.png" alt="">
+                    <img class="thumbnail" src="images/1b1.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b2.png" alt="">
+                    <img class="thumbnail" src="images/1b2.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b3.png" alt="">
+                    <img class="thumbnail" src="images/1b3.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b4.png" alt="">
+                    <img class="thumbnail" src="images/1b4.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b5.png" alt="">
+                    <img class="thumbnail" src="images/1b5.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b6.png" alt="">
+                    <img class="thumbnail" src="images/1b6.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b7.png" alt="">
+                    <img class="thumbnail" src="images/1b7.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b8.png" alt="">
+                    <img class="thumbnail" src="images/1b8.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b9.png" alt="">
+                    <img class="thumbnail" src="images/1b9.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b10.png" alt="">
+                    <img class="thumbnail" src="images/1b10.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b11.png" alt="">
+                    <img class="thumbnail" src="images/1b11.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b12.png" alt="">
+                    <img class="thumbnail" src="images/1b12.png" alt="">
                 </div>
                 <div class="columnl">
-                    <img class="thumbnail" src="1b13.png" alt="">
+                    <img class="thumbnail" src="images/1b13.png" alt="">
                 </div>
             </div>
         </div>
@@ -446,11 +447,11 @@
     <script>
         let activeIndex = 0;
         blue = "1px solid blue";
-        const images = ["1b1.png", "1b2.png", "1b3.png", "1b4.png", "1b5.png", "1b6.png", "1b7.png", "1b8.png", "1b9.png", "1b10.png", "1b11.png", "1b12.png", "1b13.png"];
+        const array = ["images/1b1.png", "images/1b2.png", "images/1b3.png", "images/1b4.png", "images/1b5.png", "images/1b6.png", "images/1b7.png", "images/1b8.png", "images/1b9.png", "images/1b10.png", "images/1b11.png", "images/1b12.png", "images/1b13.png"];
     
         function lightbox1() {
             document.getElementById("lightbox1").style.display = "block";
-            document.getElementById("slide").src = images[activeIndex];
+            document.getElementById("slide").src = array[activeIndex];
             document.body.style.overflow = "hidden";
             document.addEventListener("click", closel);
             updateThumbnailBorder();
@@ -477,9 +478,9 @@
         }
     
         function nextl() {
-            if (activeIndex < images.length - 1) {
+            if (activeIndex < array.length - 1) {
                 activeIndex++;
-                document.getElementById("slide").src = images[activeIndex];
+                document.getElementById("slide").src = array[activeIndex];
                 updateThumbnailBorder();
             }
         }
@@ -487,7 +488,7 @@
         function prevl() {
             if (activeIndex > 0) {
                 activeIndex--;
-                document.getElementById("slide").src = images[activeIndex];
+                document.getElementById("slide").src = array[activeIndex];
                 updateThumbnailBorder();
             }
         }
